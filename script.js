@@ -26,7 +26,7 @@
   do {
     play();
   }
-  while (confirm ("Spila aftur?"));
+  while (confirm ('viltu spila aftur?'));
   alert (getResults ());
 }
 
@@ -47,21 +47,20 @@
 
 function play() {
   const targetNumber = randomNumber (1,100);
-  let guess = (prompt('giskaðu á rétta tölu milli 0 og 100'));
+ 
   while (guess !== targetNumber) {
+
+    let guess = (prompt('giskaðu á rétta tölu milli 0 og 100'));
 
     if (guess==='') {
       alert('ekkert var slegið inn, reyndu aftur');
-      continue;
     }
 
     guess = parseGuess(guess);
     if(guess===null || guess>100 || guess<=0 ){
       alert('þú verður að slá inn tölu á bilinu 0 og 100, reyndu aftur');
-      continue;
     }
   }
-
 }
 
 /**
