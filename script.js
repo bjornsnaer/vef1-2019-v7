@@ -47,6 +47,7 @@
 
 function play() {
   const targetNumber = randomNumber (1,100);
+  let round = 0;
  
   while (guess !== targetNumber) {
 
@@ -60,6 +61,8 @@ function play() {
     if(guess===null || guess>100 || guess<=0 ){
       alert('þú verður að slá inn tölu á bilinu 0 og 100, reyndu aftur');
     }
+
+
   }
 }
 
