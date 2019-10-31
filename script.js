@@ -47,11 +47,12 @@
 
 function play() {
   const targetNumber = randomNumber (1,100);
+
+  let guess = (prompt('giskaðu á rétta tölu milli 0 og 100'));
+
   let round = 0;
  
   while (guess !== targetNumber) {
-
-    let guess = (prompt('giskaðu á rétta tölu milli 0 og 100'));
 
     if (guess==='') {
       alert('ekkert var slegið inn, reyndu aftur');
