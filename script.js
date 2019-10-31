@@ -15,15 +15,19 @@
 
  const games = [];
 
-
  /**
   * Byrjar leikinn okkar með því að kalla í play().
   * Eftir að play() klárar þá er boðið notandanum að spila annann leik með confirm()
   * Ef notandi ýtir á "ok" þá er annar leikur spilaður.
   * Ef notandi ýtir á "cancel" þá er sótt niðurstöður með getResults() og þær birtar með alert().
   */
-function start() {
-  play();
+
+ function start () {
+  do {
+    play();
+  }
+  while (confirm ("Spila aftur?"));
+  alert (getResults ());
 }
 
 /**
@@ -40,8 +44,24 @@ function start() {
  * 
  * Þarf aðútfæra með lykkju og flæðisstýringum
  */
+
 function play() {
-  const random = randomNumber(1,100;
+  const targetNumber = randomNumber (1,100);
+  let guess = (prompt('giskaðu á rétta tölu milli 0 og 100'));
+  while (guess !== targetNumber) {
+
+    if (guess==='') {
+      alert('ekkert var slegið inn, reyndu aftur');
+      continue;
+    }
+
+    guess = parseGuess(guess);
+    if(guess===null || guess>100 || guess<=0 ){
+      alert('þú verður að slá inn tölu á bilinu 0 og 100, reyndu aftur');
+      continue;
+    }
+  }
+
 }
 
 /**
